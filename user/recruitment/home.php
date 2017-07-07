@@ -70,7 +70,7 @@
                                             <td><?php echo $row['city_name'];?></td>  
                                             <td><?php echo $row['program'];?></td>  
                                             <td class="center">
-                                                <a href="survey.php?id=<?php echo $id;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Survey Questionaire</a>
+                                                <a href="survey.php?id=<?php echo $sid;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Survey Questionaire</a>
                                             </td>
                                         </tr> 
                                         </form>

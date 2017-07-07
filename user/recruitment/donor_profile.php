@@ -1,6 +1,6 @@
 <?php
+ include 'session.php';
  include 'header.php';
- include 'dbcon.php';
  ?>
 
     <!-- END  HEAD-->
@@ -133,10 +133,25 @@
                                 <div class="tab-pane fade" id="profile-pills">
     
 <?php
-    $query=mysqli_query($con,"select * from survey where donor_id ='$donor_id' group by survey_date order by survey_date desc")or die(mysqli_error($con));
+    $query=mysqli_query($con,"select * from survey where donor_id ='$donor_id' order by survey_date desc")or die(mysqli_error($con));
             $i=1;
             while($row=mysqli_fetch_array($query))
             {
+                if ($row['survey_status']==1)
+                {
+                    $status="Approved";
+                    $label="success";
+                }
+                if ($row['survey_status']==2)
+                {
+                    $status="Declined";
+                    $label="danger";
+                }
+                if ($row['survey_status']==0)
+                {
+                    $status="Pending";
+                    $label="warning";
+                }
             
 ?>  
                     <div class="panel-group" id="accordion">
@@ -144,11 +159,12 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $row['survey_id'];?>" class=""><?php echo date("M d, Y",strtotime($row['survey_date']));?></a>
+                                            <span class="pull-right label label-<?php echo $label;?>"><?php echo $status;?></span>
                                         </h4>
                                     </div>
                                     <div id="collapse<?php echo $row['survey_id'];?>" class="panel-collapse collapse" style="height: auto;">
                                         <div class="panel-body">
-                                                                            <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
+                                            <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
                                 <tbody>
                            
 
@@ -171,7 +187,7 @@
                                 </tr>
 
 <?php
-        $query1=mysqli_query($con,"select * from survey natural join question where category_id='$cid' and donor_id='$donor_id'")or die(mysqli_error($con));
+        $query1=mysqli_query($con,"select * from question natural join answer natural join survey where category_id='$cid' and donor_id='$donor_id'")or die(mysqli_error($con));
         
             while($row1=mysqli_fetch_array($query1))
             {

@@ -55,7 +55,7 @@ include 'header.php';
                                         <div class="col-md-9">
                                             <select class="form-control input-xlarge select2me" data-placeholder="Select..." name="status">
                                                 <option value="1">Approve</option>
-                                                <option value="0">Decline</option>
+                                                <option value="2">Decline</option>
                                             </select>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@ include 'header.php';
                                 </tr>
 
 <?php
-        $query1=mysqli_query($con,"select * from question natural join survey natural join answer where category_id='$cid' and donor_id='$id' and survey_status='0'")or die(mysqli_error($con));
+        $query1=mysqli_query($con,"select * from question natural join answer natural join survey where category_id='$cid' and survey_id='$id' and survey_status='0'")or die(mysqli_error($con));
         
             while($row1=mysqli_fetch_array($query1))
             {
