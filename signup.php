@@ -105,7 +105,16 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">City/Town</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="City/Town" name="city"/>
+			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select..." name="city">
+													<?php		
+													
+													include('includes/dbcon.php');
+														$query2=mysqli_query($con,"select * from city order by city_name")or die(mysqli_error());
+														    while($row=mysqli_fetch_array($query2)){
+																	?>
+																<option><?php echo $row['city_name'];?></option>
+													<?php }?>
+												</select>
 		</div>
 		<div class="form-group">
 			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->

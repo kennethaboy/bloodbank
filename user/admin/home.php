@@ -86,12 +86,12 @@ include 'header.php';
                     <div class="col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Real Time Traffic
+                                Real Time Blood Inventory
                             </div>
 
                                                 
 			<div class="demo-container">
-			<div id="placeholderRT" class="demo-placeholder"></div>
+			<div id="graph" class="col-md-12"></div> 
 		</div>
 
                         </div>
@@ -103,112 +103,25 @@ include 'header.php';
 
                         <div class="chat-panel panel panel-primary">
                             <div class="panel-heading">
-                                <i class="icon-comments"></i>
-                                Chat
+                                <i class="icon-tint"></i>
+                                Blood Inventory
                             <div class="btn-group pull-right">
                                 <button type="button" data-toggle="dropdown">
                                     <i class="icon-chevron-down"></i>
                                 </button>
-                                <ul class="dropdown-menu slidedown">
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-refresh"></i> Refresh
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class=" icon-comment"></i> Available
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-time"></i> Busy
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-tint"></i> Away
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-signout"></i> Sign Out
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                             </div>
 
                             <div class="panel-body">
-                                <ul class="chat">
-                                    <li class="left clearfix">
-                                        <span class="chat-img pull-left">
-                                            <img src="assets/img/1.png" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <strong class="primary-font"> Jack Sparrow </strong>
-                                                <small class="pull-right text-muted">
-                                                    <i class="icon-time"></i> 12 mins ago
-                                                </small>
-                                            </div>
-                                             <br />
-                                            <p>
-                                                Lorem ipsum dolor sit amet, bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="right clearfix">
-                                        <span class="chat-img pull-right">
-                                            <img src="assets/img/2.png" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <small class=" text-muted">
-                                                    <i class="icon-time"></i> 13 mins ago</small>
-                                                <strong class="pull-right primary-font"> Jhony Deen</strong>
-                                            </div>
-                                            <br />
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur a dolor, quis ullamcorper ligula sodales.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="left clearfix">
-                                        <span class="chat-img pull-left">
-                                            <img src="assets/img/3.png" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <strong class="primary-font"> Jack Sparrow </strong>
-                                                <small class="pull-right text-muted">
-                                                    <i class="icon-time"></i> 12 mins ago
-                                                </small>
-                                            </div>
-                                             <br />
-                                            <p>
-                                                Lorem ipsum dolor sit amet, bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="right clearfix">
-                                        <span class="chat-img pull-right">
-                                            <img src="assets/img/4.png" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <small class=" text-muted">
-                                                    <i class="icon-time"></i> 13 mins ago</small>
-                                                <strong class="pull-right primary-font"> Jhony Deen</strong>
-                                            </div>
-                                            <br />
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur a dolor, quis ullamcorper ligula sodales.
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <?php   
+            include 'dbcon.php';                                
+            $date=date('Y-m-d');
+                    $query1=mysqli_query($con,"select *,COUNT(*) as count from physical_exam where remarks='Accepted' and expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
+                           while ($row=mysqli_fetch_array($query1)){
+                                            
+                                    ?>                  
+                    <li><?php echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];?></span></li>
+<?php }?> 
                             </div>
 
                             <div class="panel-footer">
@@ -629,9 +542,15 @@ include 'header.php';
             
             <div class="well well-small">
                 <ul class="list-unstyled">
-                    <li>Visitor &nbsp; : <span>23,000</span></li>
-                    <li>Users &nbsp; : <span>53,000</span></li>
-                    <li>Registrations &nbsp; : <span>3,000</span></li>
+<?php   
+            include 'dbcon.php';                                
+            $date=date('Y-m-d');
+                    $query1=mysqli_query($con,"select *,COUNT(*) as count from physical_exam where remarks='Accepted' and expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
+                           while ($row=mysqli_fetch_array($query1)){
+                                            
+                                    ?>                  
+                    <li><?php echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];?></span></li>
+<?php }?>   
                 </ul>
             </div>
             <div class="well well-small">
@@ -687,6 +606,59 @@ include 'header.php';
    
     <!-- END PAGE LEVEL SCRIPTS -->
 
+     <script type="text/javascript">
+        $(document).ready(function() {
+            var options = {
+                chart: {
+                    renderTo: 'graph',
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    spacingBottom: 50,
+                    spacingLeft: 35
+                },
+                title: {
+                    text: '',
+                    style: { fontFamily: '\'Lato\', sans-serif', lineHeight: '18px', fontSize: '26px' }
+                },
+                tooltip: {
+                    formatter: function() {
+                        return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +' %';
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            style: { fontFamily: '\'Lato\', sans-serif', lineHeight: '14px', fontSize: '14px' },
+                            connectorColor: '#000000',
+                            formatter: function() {
+                                return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +' %';
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '',
+                    data: []
+                }]
+            }
+            
+            $.getJSON("dataresult.php", function(json) {
+                options.series[0].data = json;
+                chart = new Highcharts.Chart(options);
+            });
+            
+            
+            
+        });   
+        </script>
+      <script src="../assets/js/highcharts.js"></script>
+        <script src="../assets/js/exporting.js"></script>
 
 </body>
 

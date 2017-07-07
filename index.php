@@ -29,7 +29,7 @@
   <div class="message-block content content-center valign-center" id="message-block">
     <div class="valign-center-elem">
       <h2>If you want to be a donor <strong>hit the button below</strong></h2>
-      <em><a href = "login.html" class = "btn btn-success">Log in</a> <a href = "signup.html" class = "btn btn-primary">Sign up</a></em>
+      <em><a href = "login.html" class = "btn btn-success">Log in</a> <a href = "signup.php" class = "btn btn-primary">Sign up</a></em>
     </div>
   </div>
   <!-- Message block END -->
