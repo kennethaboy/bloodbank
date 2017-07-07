@@ -35,22 +35,6 @@
                             <div class="form-group col-md-6">
                                 <h3>Pending Donors</h3>
                             </div>
-                                       <div class="form-group col-md-1 pull-right">
-                                            <button class="btn btn-lg btn-primary" type="submit">Save</button>
-                                        </div> 
-                                      <div class="form-group col-md-3 pull-right">
-                                            <label>Select Program</label>
-                                            <select class="form-control" tabindex="4" name="program" required>
-
-                                                <?php
-                                                    $query2=mysqli_query($con,"select * from program order by program")or die(mysqli_error());
-                                                            while($row=mysqli_fetch_array($query2)){
-                                                ?>
-                                                       <option value="<?php echo $row['program_id'];?>"><?php echo $row['program'];?></option>
-                                                                  <?php }?>
-                                            </select>
-                                        </div>
-                                      <br><br><br>  
 
                         </div>
                         <div class="panel-body">
@@ -71,7 +55,7 @@
                                     <tbody>
                                     <?php   
                                     include '../../includes/dbcon.php';                             
-                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join city where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
+                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join city natural join program  where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             $id=$row['donor_id'];
                                             $sid=$row['survey_id'];                                       
@@ -84,13 +68,7 @@
                                             <td><?php echo $row['donor_last'];?></td>  
                                             <td><?php echo $row['donor_contact'];?></td>  
                                             <td><?php echo $row['city_name'];?></td>  
-<?php   
-                                
-                                        $query2=mysqli_query($con,"select * from program_donor natural join program where donor_id='$id' ORDER BY program_donor_id DESC")or die(mysqli_error($con));
-                                                $row2=mysqli_fetch_array($query2);
-                                            
-                                    ?>                                              
-                                            <td><?php echo $row2['program'];?></td>  
+                                            <td><?php echo $row['program'];?></td>  
                                             <td class="center">
                                                 <a href="survey.php?id=<?php echo $id;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Survey Questionaire</a>
                                             </td>

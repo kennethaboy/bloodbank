@@ -37,7 +37,7 @@ include 'header.php';
                         <div class="portlet box green-haze">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-globe"></i><h2>Blood Donor History Questionnaire</h2>
+                                    <i class="fa fa-globe"></i><h2>Blood Donor Questionnaire</h2>
                                 </div>
                                 <div class="tools">
                                     <a href="javascript:;" class="reload" data-original-title="" title="">
@@ -47,7 +47,39 @@ include 'header.php';
                                 </div>
                             </div>
                             <div class="portlet-body">
-                                <form method="post" action="questionaire_save.php">
+                                <form method="post" action="approve.php">
+                                <input type="hidden" name="id" value="<?php $id=$_REQUEST['id']; echo $id;?>">
+                                <div class="row">
+                                    <div class="form-group form-md-line-input col-md-6">
+                                        <label class="col-md-3 control-label" for="form_control_1">Select Program</label>
+                                        <div class="col-md-9">
+                                            <select class="form-control input-xlarge select2me" data-placeholder="Select..." name="status">
+                                                <option value="1">Approve</option>
+                                                <option value="0">Decline</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input col-md-1">
+                                        <label class="col-md-2 control-label" for="form_control_1"></label>
+                                        <div class="col-md-10">
+                                             <button class="btn btn-success" type="submit" name="approve"> Approve </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input col-md-1">
+                                        <label class="col-md-2 control-label" for="form_control_1"></label>
+                                        <div class="col-md-10">
+                                             <button class="btn btn-danger" type="submit" name="decline"> Decline </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input col-md-1">
+                                        <label class="col-md-2 control-label" for="form_control_1"></label>
+                                        <div class="col-md-10">
+                                             <a href="home.php" class="btn btn-primary"> Back </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                          </form>                  
                                 <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
                                 <tbody>
                                 <input type="hidden" name="id" value="<?php echo $_REQUEST['id'];?>">
@@ -72,7 +104,7 @@ include 'header.php';
                                 </tr>
 
 <?php
-        $query1=mysqli_query($con,"select * from survey natural join question where category_id='$cid' and donor_id='$id' and survey_status='0'")or die(mysqli_error($con));
+        $query1=mysqli_query($con,"select * from question natural join survey natural join answer where category_id='$cid' and donor_id='$id' and survey_status='0'")or die(mysqli_error($con));
         
             while($row1=mysqli_fetch_array($query1))
             {
@@ -95,14 +127,8 @@ include 'header.php';
                                 
                                 </tbody>
                                 </table>
-                                <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-offset-12 col-md-12">
-                                                <a href="home.php" class="btn btn-primary"> Back </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </form> 
+                               
+                           
                             </div>
                         </div>
                         
