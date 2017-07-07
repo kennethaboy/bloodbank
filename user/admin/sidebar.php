@@ -12,7 +12,7 @@
             </div>
             <ul id="menu" class="collapse">                
                 <li class="panel active">
-                    <a href="#" >
+                    <a href="home.php" >
                         <i class="icon-table"></i> Dashboard                       
                     </a>                   
                 </li>
