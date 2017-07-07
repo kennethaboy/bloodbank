@@ -48,7 +48,7 @@
 	<p style ="text-align:center;"><img src = "../assets/frontend/onepage/img/logo/create.png" style = "width:200px;"><p>
 	<div class = "row">
 		<div class = "col-lg-6 col-md-6"><a href = "questionaire.php" class = "btn btn-block btn-default homer">Donate Now</a></div>
-		<div class = "col-lg-6 col-md-6"><a href = "booking_donation.php" class = "btn btn-block btn-default homer">Book Donation</a></div>
+		<div class = "col-lg-6 col-md-6"><a href = "book_donation.php" class = "btn btn-block btn-default homer">Book Donation</a></div>
 	</div>
 	<!-- END REGISTRATION FORM -->
 </div>
