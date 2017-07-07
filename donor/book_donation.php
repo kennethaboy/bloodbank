@@ -20,27 +20,7 @@
 		<!-- BEGIN CONTENT -->
 		<div class="page-content-wrapper">
 			<div class="page-content">
-				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-				<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-								<h4 class="modal-title">Modal title</h4>
-							</div>
-							<div class="modal-body">
-								 Widget settings form goes here
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn blue">Save changes</button>
-								<button type="button" class="btn default" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
-				<!-- /.modal -->
+				
 				<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 				
 				<!-- BEGIN PAGE CONTENT-->
@@ -53,19 +33,7 @@
 									<i class="icon-settings font-green-haze"></i>
 									<span class="caption-subject bold uppercase"> Book a Blood Donation</span>
 								</div>
-								<div class="actions">
-									<a class="btn btn-circle btn-icon-only blue" href="javascript:;">
-									<i class="icon-cloud-upload"></i>
-									</a>
-									<a class="btn btn-circle btn-icon-only green" href="javascript:;">
-									<i class="icon-wrench"></i>
-									</a>
-									<a class="btn btn-circle btn-icon-only red" href="javascript:;">
-									<i class="icon-trash"></i>
-									</a>
-									<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="" title="">
-									</a>
-								</div>
+								
 							</div>
 							<div class="portlet-body form">
 								<form role="form" class="form-horizontal" method="post" action="book.php">
@@ -75,7 +43,7 @@
 											<label class="col-md-2 control-label" for="form_control_1">Date of Booking</label>
 											<div class="col-md-10">
 												<div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-start-date="+0d">
-													<input type="text" class="form-control" readonly="" name="date">
+													<input type="text" class="form-control" readonly="" name="date" required>
 													<span class="input-group-btn">
 													<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -86,7 +54,7 @@
 											<label class="col-md-2 control-label" for="form_control_1">Time of Booking</label>
 											<div class="col-md-3">
 												<div class="input-group">
-													<input type="text" class="form-control timepicker timepicker-no-seconds" name="time">
+													<input type="text" class="form-control timepicker timepicker-no-seconds" name="time" required>
 													<span class="input-group-btn">
 													<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>

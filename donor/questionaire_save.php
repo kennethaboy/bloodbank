@@ -4,16 +4,20 @@ include('../includes/dbcon.php');
 
 	$id=$_SESSION['id'];
 	$qid = $_POST['qid'];
+	$date = date("Y-m-d H:i:s");
 	  
-	
-		foreach($qid as $val) {	
+	mysqli_query($con,"INSERT INTO survey(donor_id,survey_date) VALUES('$id','$date')")or die(mysqli_error($con));
+		$survey_id=mysqli_insert_id($con);
+
+		foreach($qid as $val) 
+		{	
 			$answer = $_POST["answer$val"];
 			
-				    mysqli_query($con,"INSERT INTO survey(donor_id,question_id,answer) VALUES('$id','$val','$answer')")or die(mysqli_error($con));
-					}
+			mysqli_query($con,"INSERT INTO answer(question_id,answer,survey_id) VALUES('$val','$answer','$survey_id')")or die(mysqli_error($con));
+		}
 	
-	echo "<script type='text/javascript'>alert('Successfully added new survey!');</script>";
-	echo "<script>document.location='questionaire.php'</script>";   
+	echo "<script type='text/javascript'>alert('Successfully submitted survey questionnaire! Please wait for the confirmation from the recruitment officer.');</script>";
+	echo "<script>document.location='logout.php'</script>";   
 	
 	
 ?>
