@@ -53,12 +53,7 @@
 								<div class="caption">
 									<i class="fa fa-globe"></i>Booking History
 								</div>
-								<div class="tools">
-									<a href="javascript:;" class="reload" data-original-title="" title="">
-									</a>
-									<a href="javascript:;" class="remove" data-original-title="" title="">
-									</a>
-								</div>
+								
 							</div>
 							<div class="portlet-body">
 								<form method="post" action="#">

@@ -50,15 +50,6 @@ include 'header.php';
                                 <form method="post" action="approve.php">
                                 <input type="hidden" name="id" value="<?php $id=$_REQUEST['id']; echo $id;?>">
                                 <div class="row">
-                                    <div class="form-group form-md-line-input col-md-6">
-                                        <label class="col-md-3 control-label" for="form_control_1">Select Program</label>
-                                        <div class="col-md-9">
-                                            <select class="form-control input-xlarge select2me" data-placeholder="Select..." name="status">
-                                                <option value="1">Approve</option>
-                                                <option value="2">Decline</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                     <div class="form-group form-md-line-input col-md-1">
                                         <label class="col-md-2 control-label" for="form_control_1"></label>
                                         <div class="col-md-10">

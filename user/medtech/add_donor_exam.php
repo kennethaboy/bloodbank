@@ -16,7 +16,7 @@ include '../../includes/dbcon.php';
 	$reasons_for_deferral = $_POST['reasons_for_deferral'];		
 			
 			mysqli_query($con,"INSERT INTO physical_exam(donor_id,weight,blood_pressure,pulse_rate,temp,gen_appearance,skin,heent,heart_lungs,remarks,volume,medical_officer,reasons_for_deferral,exam_status)	
-			VALUES('$donor_id','$weight','$blood_pressure','$pulse_rate','$temp','$gen_appearance', '$skin', '$heent', '$heart_lungs', '$remarks', '$volume','$medical_officer','$reasons_for_deferral','0')")or die(mysqli_error($con)); 
+			VALUES('$donor_id','$weight','$blood_pressure','$pulse_rate','$temp','$gen_appearance', '$skin', '$heent', '$heart_lungs', '$remarks', '$volume','$medical_officer','$reasons_for_deferral','1')")or die(mysqli_error($con)); 
 				
 			mysqli_query($con,"UPDATE survey SET survey_status='1' WHERE donor_id='$donor_id'"); 
 

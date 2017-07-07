@@ -1,6 +1,6 @@
 <?php
+ include 'session.php';
  include 'header.php';
- include 'dbcon.php';
  ?>
 
     <!-- END  HEAD-->
@@ -46,8 +46,8 @@
                                     </thead>
                                     <tbody>
                                     <?php   
-                                    include '../../includes/dbcon.php';                             
-                                        $query1=mysqli_query($con,"select * from survey natural join donor where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
+                                    
+                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join program  where survey_status='1' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             $id=$row['donor_id'];
                                             $sid=$row['survey_id'];                                       

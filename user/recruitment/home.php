@@ -47,15 +47,14 @@
                                             <th>Middle Name</th>
                                             <th>Last Name</th>
                                             <th>Contact #</th>
-                                            <th>City</th>
                                             <th>Program Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php   
-                                    include '../../includes/dbcon.php';                             
-                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join city natural join program  where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
+
+                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join program  where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             $id=$row['donor_id'];
                                             $sid=$row['survey_id'];                                       
@@ -67,7 +66,7 @@
                                             <td><?php echo $row['donor_middle'];?></td>  
                                             <td><?php echo $row['donor_last'];?></td>  
                                             <td><?php echo $row['donor_contact'];?></td>  
-                                            <td><?php echo $row['city_name'];?></td>  
+                                        
                                             <td><?php echo $row['program'];?></td>  
                                             <td class="center">
                                                 <a href="survey.php?id=<?php echo $sid;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Survey Questionaire</a>

@@ -1,5 +1,5 @@
 <?php
-include('dbcon.php');
+include('session.php');
 
  if (isset($_POST['update_exam']))
  { 
@@ -16,7 +16,7 @@ include('dbcon.php');
 	 $expiry = $_POST['expiry'];
 	/* $hematocrit = $_POST['hematocrit'];*/
 	 
-	 mysqli_query($con,"UPDATE physical_exam SET blood_bag_type = '$blood_bag_type',segment_number='$segment_number',time_started='$time_started',time_ended='$time_ended',phlebotomist='$phlebotomist',blood_type='$blood_type',screened_by='$screened_by',hematocrit='$hematocrit',donation_date = '$donation_date', expiry = '$expiry', exam_status='1'  where exam_id='$exam_id'") or die(mysqli_error($con)); 
+	 mysqli_query($con,"UPDATE physical_exam SET blood_bag_type = '$blood_bag_type',segment_number='$segment_number',time_started='$time_started',time_ended='$time_ended',phlebotomist='$phlebotomist',blood_type='$blood_type',screened_by='$screened_by',hematocrit='$hematocrit',donation_date = '$donation_date', expiry = '$expiry', exam_status='2'  where exam_id='$exam_id'") or die(mysqli_error($con)); 
 
 		echo "<script type='text/javascript'>alert('Successfully updated donation details!');</script>";
 		echo "<script>document.location='donors_list.php'</script>";

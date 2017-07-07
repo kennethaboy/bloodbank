@@ -72,7 +72,7 @@ include 'header.php';
                                 </tr>
 
 <?php
-        $query1=mysqli_query($con,"select * from survey natural join question where category_id='$cid' and donor_id='$id'")or die(mysqli_error($con));
+        $query1=mysqli_query($con,"select * from survey natural join question natural join answer where category_id='$cid' and donor_id='$id'")or die(mysqli_error($con));
         
             while($row1=mysqli_fetch_array($query1))
             {

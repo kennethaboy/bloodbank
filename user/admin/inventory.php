@@ -103,6 +103,7 @@
             </div>
 <?php
     $query=mysqli_query($con,"select COUNT(donor_id) as donor from physical_exam group by donor_id")or die(mysqli_error($con));
+            $count=0;    
             while($row=mysqli_fetch_array($query)){
                $count=$count+1;
             }

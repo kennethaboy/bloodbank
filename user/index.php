@@ -9,13 +9,13 @@
             <form  method ="POST" action = "login.php"  class="form-signin">               
                 <input type="text"  name="username" placeholder="Username"  class="form-control" />
                 <input type="password" name="password"  placeholder="Password"  class="form-control" />
-				<select name = "user_type" class = "form-control">				
-					<option value = "Administrator">Administrator</option>
-					<option value = "Medical Technology">Med Tech</option>
-					<option value = "Recruitment Officer">Recruitment Officer</option>
-					<option value = "Phlebotomist">Phlebotomist</option>
-				</select>
-				<br/>
+        				<select name = "user_type" class = "form-control">				
+        					<option value = "Administrator">Administrator</option>
+        					<option value = "Medical Technology">Med Tech</option>
+        					<option value = "Recruitment Officer">Recruitment Officer</option>
+        					<option value = "Phlebotomist">Phlebotomist</option>
+        				</select>
+        				<br/>
                 <button name  = "login" class="btn text-center btn-block btn-success">Sign in</button>
             </form>			
         </div>

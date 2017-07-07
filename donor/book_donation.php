@@ -67,12 +67,12 @@
 											<div class="col-md-10">
 												<div class="md-checkbox-list">
 													<div class="md-checkbox">
-														<input type="checkbox" id="status" class="md-check" name="status" value="yes">
+														<!--<input type="checkbox" id="status" class="md-check" name="status" value="yes">
 														<label for="status">
 														<span></span>
 														<span class="check"></span>
 														<span class="box"></span>
-														Check if booking for bloodletting program </label>
+														Check if booking for bloodletting program </label>-->
 													</div>
 													
 												</div>
@@ -82,7 +82,7 @@
 										<div class="form-group form-md-line-input has-warning">
 											<label class="col-md-2 control-label" for="form_control_1">Program Name</label>
 											<div class="col-md-10">
-												<input type="text" class="form-control" id="form_control_1" placeholder="Warning state" name="program">
+												<input type="text" class="form-control" id="form_control_1" placeholder="Name of Program" name="program">
 												<div class="form-control-focus">
 												</div>
 											</div>
@@ -114,7 +114,7 @@
 										<div class="form-group form-md-line-input has-success">
 											<label class="col-md-2 control-label" for="form_control_1">Booking Address</label>
 											<div class="col-md-10">
-												<textarea class="form-control" rows="3" placeholder="Enter more text" name="address"></textarea>
+												<textarea class="form-control" rows="3" placeholder="Prk/Street/" name="address"></textarea>
 												<div class="form-control-focus">
 												</div>
 											</div>

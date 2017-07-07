@@ -1,9 +1,9 @@
 <?php
-include('session.php');
+session_start();
 
 if(isset($_POST['login']))
 {
-
+include '../includes/dbcon.php';
 $user_unsafe=$_POST['username'];
 $pass_unsafe=$_POST['password'];
 $user_type_unsafe=$_POST['user_type'];

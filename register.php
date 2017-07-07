@@ -30,8 +30,8 @@
  				}
 		else
 				{
-					mysqli_query($con,"INSERT INTO donor(donor_first,donor_middle,donor_last,donor_email,donor_password,donor_nationality,donor_occupation,donor_address,donor_city,donor_contact,donor_gender,donor_bday) 
-		VALUES('$first','$mi','$last','$email','$password','$nationality','$occupation','$address','$city','$contact','$gender','$bday')")or die(mysqli_error($con));  
+					mysqli_query($con,"INSERT INTO donor(donor_first,donor_middle,donor_last,donor_email,donor_password,donor_nationality,donor_occupation,donor_address,donor_city,donor_contact,donor_gender,donor_bday,donor_pic) 
+		VALUES('$first','$mi','$last','$email','$password','$nationality','$occupation','$address','$city','$contact','$gender','$bday','default.gif')")or die(mysqli_error($con));  
 	
 						echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
 						echo "<script>document.location='login.html';</script>";

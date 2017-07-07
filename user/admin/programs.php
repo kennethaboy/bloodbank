@@ -40,9 +40,7 @@
                                         <tr>
                                             <th>Program Name</th>
                                             <th>Program Address</th>
-                                            <th>Program Date</th>
-                                            <th>Time</th>
-                                            <th>Agency</th>
+                                           
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -56,9 +54,12 @@
                                         <tr class="odd gradeX">
                                             <td><?php echo $row['program'];?></td>
                                             <td><?php echo $row['program_address'];?></td>
-                                            <td><?php echo date("M d, Y",strtotime($row['program_date']));?></td>
-                                            <td><?php echo date("h:i a",strtotime($row['program_time']));?></td>
-                                            <td class="center"><?php echo $row['agency'];?></td>
+                                           
+                                           
+<?php   
+                                            
+                                    ?>                                         
+        
                                             <td class="center">
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2017 at 10:10 AM
+-- Generation Time: Jul 07, 2017 at 03:48 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -31,15 +31,6 @@ CREATE TABLE `agency` (
   `agency_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `agency`
---
-
-INSERT INTO `agency` (`agency_id`, `agency_name`) VALUES
-(1, 'Brgy. Busay'),
-(2, 'Bago City DSWD'),
-(3, 'Red Cross Youth Bacolod Chapter');
-
 -- --------------------------------------------------------
 
 --
@@ -52,6 +43,42 @@ CREATE TABLE `answer` (
   `answer` varchar(10) NOT NULL,
   `survey_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`answer_id`, `question_id`, `answer`, `survey_id`) VALUES
+(1, 1, 'yes', 1),
+(2, 2, 'yes', 1),
+(3, 3, 'yes', 1),
+(4, 4, 'yes', 1),
+(5, 5, 'yes', 1),
+(6, 6, 'yes', 1),
+(7, 7, 'yes', 1),
+(8, 8, 'yes', 1),
+(9, 9, 'yes', 1),
+(10, 10, 'yes', 1),
+(11, 11, 'yes', 1),
+(12, 12, 'yes', 1),
+(13, 13, 'yes', 1),
+(14, 14, 'yes', 1),
+(15, 15, 'yes', 1),
+(16, 16, 'yes', 1),
+(17, 17, 'yes', 1),
+(18, 18, 'yes', 1),
+(19, 19, 'yes', 1),
+(20, 20, 'yes', 1),
+(21, 21, 'yes', 1),
+(22, 22, 'yes', 1),
+(23, 23, 'yes', 1),
+(24, 24, 'yes', 1),
+(25, 25, 'yes', 1),
+(26, 26, 'yes', 1),
+(27, 27, 'yes', 1),
+(28, 28, 'yes', 1),
+(29, 29, 'no', 1),
+(30, 30, 'no', 1);
 
 -- --------------------------------------------------------
 
@@ -75,17 +102,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `donor_id`, `booking_date`, `booking_time`, `status`, `booking_address`, `booking_city`, `program_name`) VALUES
-(7, 2, '2017-02-21', '06:55:00', 0, '', '', ''),
-(8, 2, '2017-02-22', '06:55:00', 0, '', '', ''),
-(9, 2, '2017-02-21', '06:55:00', 0, '', '', ''),
-(10, 2, '2017-02-21', '06:55:00', 0, '', '', ''),
-(11, 2, '2017-02-22', '06:55:00', 0, '', '', ''),
-(12, 2, '2017-02-21', '06:55:00', 0, '', '', ''),
-(13, 2, '2017-02-21', '06:55:00', 0, '', '', ''),
-(14, 1, '2017-03-01', '07:00:00', 0, '', '', ''),
-(15, 10, '2017-02-23', '21:40:00', 0, 'Bago City', 'Bago City', 'Bloodletting'),
-(16, 14, '2017-03-15', '20:05:00', 0, '', 'Bacolod City', ''),
-(17, 14, '2017-03-23', '23:50:00', 0, '', 'Bacolod City', '');
+(1, 1, '2017-07-17', '09:00:00', 0, '', '', ''),
+(2, 2, '2017-07-12', '21:15:00', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -180,15 +198,8 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`donor_id`, `donor_last`, `donor_first`, `donor_middle`, `donor_bday`, `donor_gender`, `donor_contact`, `donor_email`, `donor_password`, `donor_nationality`, `donor_civil`, `donor_occupation`, `donor_address`, `donor_city`, `donor_zipcode`, `donor_office_address`, `donor_office_zipcode`, `donor_pic`, `donor_type`) VALUES
-(10, 'Cueva', 'Kaye', 'G', '2017-01-01', 'female', '9898', 'kaye@gmail.com', '123', 'kjk', '', 'kjkj', 'jkjkj', 'jkjk', '', '', 0, '16358888_120300001863097991_867938277_n.jpg', ''),
-(11, 'adada', 'dada', 'dada', '2017-01-01', 'female', '76767', 'e@y.com', '123', 'ddsd', '', 'jhjhj', 'dsds', 'dsds', '', '', 0, '', ''),
-(12, 'dad', 'sasa', 'ada', '2017-01-01', 'female', '4242', 'emoblazz@gmail.com', '12345', 'dsds', '', 'jhjh', 'dsds', 'dsds', '', '', 0, '', ''),
-(13, 'sasa', 'sasa', 'saa', '2017-01-01', 'female', '7878', 'g@g.com', '123', '', '', 'jhjh', '', '', '', '', 0, '', ''),
-(14, 'Katipunan', 'Carmina', 'A', '1998-01-01', 'female', '09051914070', 'emoblazz@gmail.com', '123', 'Filipino', 'Single', 'Technician', 'Brgy. Busay', 'Bago City', '6101', 'Talisay', 6115, 'f349458176.jpg', 'Volunteer'),
-(15, 'jhjh', 'jhjhdada', 'jhjh', '2017-01-01', 'female', '7676', 'emoblazz@gmail.com', '', '', '', 'kjjk', '', '', '', '', 0, '', ''),
-(17, 'lklk', 'kjkj', 'lkl', '2017-01-01', 'female', 'uiuiu', 'emoblazz@gmail.com', '123', 'kjkj', '', 'kjkjkjmn', 'kjkj', 'kjkj', '', '', 0, '', ''),
-(18, 'Katipun', 'Carmin', '', '2017-01-01', 'female', '7878', 'emoblazz@gmail.com1', '123', 'Filipino', 'Single', 'None', 'Prk. Tumpok', '2', '6101', 'Talisay', 6115, '', 'Volunteer'),
-(19, 'Last', 'First', 'Mi', '1995-01-01', 'male', '89787', 'a@email.com', '123', 'American', 'Married', 'Teacher', 'Prk. Santol', '2', '6101', 'jhjh', 6765, '', 'Forced');
+(1, 'Cueva', 'Kaye', 'G', '1994-10-24', 'female', '0987e78er', 'kaye@y.c', '123', 'Filipino', '', 'Teller', 'Brgy. Bato', 'Sagay', '', '', 0, '', ''),
+(2, 'Magbanua', 'Lee Pipez', 'Tolentino', '1970-01-01', 'female', '09051914070', 'lee@gmail.com', '123', 'Filipino', '', 'Sysad', 'Busay', 'Bago', '', '', 0, '12366293_1101014223243438_7439809184725925904_n.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -212,17 +223,8 @@ CREATE TABLE `event` (
 CREATE TABLE `linkages` (
   `linkage_id` int(11) NOT NULL,
   `agency_id` int(11) NOT NULL,
-  `booking_id` int(11) NOT NULL
+  `program_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `linkages`
---
-
-INSERT INTO `linkages` (`linkage_id`, `agency_id`, `booking_id`) VALUES
-(1, 1, 12),
-(2, 1, 13),
-(3, 1, 14);
 
 -- --------------------------------------------------------
 
@@ -264,10 +266,7 @@ CREATE TABLE `physical_exam` (
 --
 
 INSERT INTO `physical_exam` (`exam_id`, `donor_id`, `weight`, `blood_pressure`, `pulse_rate`, `temp`, `gen_appearance`, `skin`, `heent`, `heart_lungs`, `remarks`, `volume`, `medical_officer`, `reasons_for_deferral`, `blood_bag_type`, `segment_number`, `time_started`, `time_ended`, `phlebotomist`, `blood_type`, `screened_by`, `hematocrit`, `exam_status`, `donation_date`, `expiry`, `survey_id`) VALUES
-(1, 10, '46', '120/180', '80', '36', 'fdfdf', 'green', 'fdfd', 'fdfd', 'Accepted', '120', 'Medical Techonology', 'dsdss', 'Double', 'a998798da8', '10:57:00', '19:58:00', 'test test', 'A', 'test test', '', 1, '2016-11-30', '2017-01-30', 0),
-(3, 17, '44', '100/120', '60', '45', 'dfsf', 'ljkj', 'kjk', 'lkjk', 'Accepted', '120', 'Medical Techonology', '', '', '', '00:00:00', '00:00:00', '', 'B', '', '', 0, '0000-00-00', '2017-03-13', 0),
-(4, 10, '87', '1909', '78', '89', 'jhjh', 'jhjh', 'jhjh', 'hjhj', 'Accepted', '120', 'Medical Techonology', '', '', '', '00:00:00', '00:00:00', '', 'B', '', '', 0, '0000-00-00', '2017-03-17', 0),
-(5, 11, '10', '120/130', '20', '35', 'dds', 'lkl', 'lkl', ';lkl', 'Accepted', '150', 'Matt Daemon', '', '', '', '00:00:00', '00:00:00', '', 'D', '', '', 0, '0000-00-00', '2017-03-24', 0);
+(1, 2, '54', '90/110', '12', '32', 'jhjh', 'jhj', 'kjdksds', 'dsds', 'Accepted', '120', 'Medical Techonology', '', 'Double', '123', '01:00:00', '01:01:00', 'test test', 'A', 'test test', '', 2, '2017-07-07', '2017-07-10', 0);
 
 -- --------------------------------------------------------
 
@@ -289,9 +288,7 @@ CREATE TABLE `program` (
 --
 
 INSERT INTO `program` (`program_id`, `program`, `program_address`, `city_id`, `program_date`, `program_time`) VALUES
-(1, 'Bloodletting', 'Bago City', 1, '2017-03-16', '11:00:00'),
-(2, 'Sample', 'kkjk', 2, '0000-00-00', '11:00:00'),
-(3, 'ds', 'dsds', 2, '0000-00-00', '11:00:00');
+(1, 'Walk-in', 'NA', 0, '0000-00-00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -304,16 +301,6 @@ CREATE TABLE `program_donor` (
   `donor_id` int(11) NOT NULL,
   `program_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `program_donor`
---
-
-INSERT INTO `program_donor` (`program_donor_id`, `donor_id`, `program_id`) VALUES
-(1, 18, 1),
-(2, 19, 1),
-(3, 10, 2),
-(4, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -383,7 +370,7 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`sched_id`, `sched_date`, `start_time`, `end_time`, `user_id`, `date_end`) VALUES
-(5, '2017-02-09', '10:15:00', '10:15:00', 2, '2017-03-03');
+(6, '2017-07-08', '09:45:00', '09:45:00', 1, '1970-01-01');
 
 -- --------------------------------------------------------
 
@@ -395,8 +382,16 @@ CREATE TABLE `survey` (
   `survey_id` int(11) NOT NULL,
   `donor_id` int(11) NOT NULL,
   `survey_date` date NOT NULL,
-  `survey_status` int(11) NOT NULL
+  `survey_status` int(11) NOT NULL,
+  `program_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `survey`
+--
+
+INSERT INTO `survey` (`survey_id`, `donor_id`, `survey_date`, `survey_status`, `program_id`) VALUES
+(1, 2, '2017-07-07', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -533,17 +528,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `agency`
 --
 ALTER TABLE `agency`
-  MODIFY `agency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `agency_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -563,7 +558,7 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `event`
 --
@@ -573,22 +568,22 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `linkages`
 --
 ALTER TABLE `linkages`
-  MODIFY `linkage_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `linkage_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `physical_exam`
 --
 ALTER TABLE `physical_exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `program_donor`
 --
 ALTER TABLE `program_donor`
-  MODIFY `program_donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `program_donor_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `question`
 --
@@ -598,12 +593,12 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `survey_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `survey_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -1,5 +1,7 @@
 
-<?php include 'header.php';?>
+<?php
+ include 'session.php';
+ include 'header.php';?>
 
 <?php
 
@@ -16,7 +18,7 @@
 <div class = "container">
 	<div class = "row">	
 		<div class = "col-lg-12 col-md-12">
-			<?php include 'dbcon.php';
+			<?php
 			$query1=mysqli_query($con,"select * from physical_exam WHERE exam_id = '$exam_id'")or die(mysqli_error());
 			$row1=mysqli_fetch_assoc($query1);			
 		?>

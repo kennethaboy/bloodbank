@@ -1,6 +1,6 @@
 <?php
+ include 'session.php';
  include 'header.php';
- include 'dbcon.php';
  ?>
 
     <!-- END  HEAD-->
@@ -45,10 +45,10 @@
                                     </thead>
                                     <tbody>
 									<?php	
-									include 'dbcon.php';								
+									
 										$query1=mysqli_query($con,"select * from physical_exam
 														LEFT JOIN donor on donor.donor_id = physical_exam.donor_id
-														WHERE physical_exam.exam_status = '0' ORDER BY exam_id DESC")or die(mysqli_error($con));
+														WHERE physical_exam.exam_status = '1' and remarks='Accepted' ORDER BY exam_id DESC")or die(mysqli_error($con));
 														while ($row=mysqli_fetch_array($query1)){
 											$id=$row['exam_id'];										
 									?>  
@@ -93,6 +93,9 @@
     <script src="../assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 	<?php include 'script.php';?>
+    <script type="text/javascript">
+        $("#datepicker").datepicker().datepicker("setDate", new Date());
+    </script>    
 </body>
     <!-- END BODY-->
     

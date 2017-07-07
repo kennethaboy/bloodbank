@@ -1,6 +1,6 @@
 <?php
+ include 'session.php';
  include 'header.php';
- include 'dbcon.php';
  ?>
 
     <!-- END  HEAD-->
@@ -46,7 +46,6 @@
                                     </thead>
                                     <tbody>
 									<?php	
-									include 'dbcon.php';								
 										$query1=mysqli_query($con,"select * from physical_exam LEFT JOIN donor ON donor.donor_id = physical_exam.donor_id WHERE physical_exam.exam_status ='1'")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											$id=$row['exam_id'];										

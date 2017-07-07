@@ -66,7 +66,7 @@
 								<thead>
 								<tr role="row">
 									<th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-										 Booking Date
+										 Donation Date
 									</th>
 									<th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
 										 Volume

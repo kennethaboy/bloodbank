@@ -1,6 +1,6 @@
 <?php
+ include 'session.php';
  include 'header.php';
- include 'dbcon.php';
  ?>
 
     <!-- END  HEAD-->
@@ -77,12 +77,7 @@
         </div>
        <!--END PAGE CONTENT -->
           <!-- RIGHT STRIP  SECTION -->
-        <div id="right">
-            <div class="well well-small">
-                <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#uiModal"><i class = "icon-plus"></i> Add User</button>
-            </div>
-         
-        </div>
+       
          <!-- END RIGHT STRIP  SECTION -->
 
     </div>
