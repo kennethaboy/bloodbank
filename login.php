@@ -27,7 +27,7 @@ $query=mysqli_query($con,"select * from donor where donor_email='$email' and don
 				$_SESSION['name']=$first." ".$last;
 				  
 
-			  		echo "<script type='text/javascript'>document.location='donor/home.php'</script>";
+			  		echo "<script type='text/javascript'>document.location='donor/queing.php'</script>";
 			  	
 				  
   
