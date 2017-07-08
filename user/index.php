@@ -2,8 +2,9 @@
 <body>
    <div class="container">
     <div class="text-center">
-		Provincial Blood Bank Inventory System
+	<h1 class = "">Provincial Blood Bank Inventory System</h1>	
     </div>
+
         <div>
             <form  method ="POST" action = "login.php"  class="form-signin">               
                 <input type="text"  name="username" placeholder="Username"  class="form-control" />
