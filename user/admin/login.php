@@ -1,6 +1,5 @@
 <?php session_start();
 
-include('session.php');
 
 if(isset($_POST['login']))
 {

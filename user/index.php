@@ -1,8 +1,8 @@
 <?php include 'login_header.php';?>
-<body>
+<body style = "background :url('../assets/frontend/onepage/img/blood.jpg');background-size:cover;">
    <div class="container">
     <div class="text-center">
-	<h1 class = "">Provincial Blood Bank Inventory System</h1>	
+	<h1 class = "" style ="color:white;">Provincial Blood Bank Inventory System</h1>	
     </div>
 
         <div>
