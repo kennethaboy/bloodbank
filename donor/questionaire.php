@@ -52,12 +52,27 @@
 						<div class="portlet box green-haze">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-globe"></i>Blood Donor History Questionnaire
+									<i class="fa fa-globe"></i>Fill up Questionnaire
 								</div>
 								
 							</div>
 							<div class="portlet-body">
 								<form method="post" action="questionaire_save.php">
+								<div class="row">
+									<div class="form-group form-md-line-input col-md-12">
+										<label class="col-md-2 control-label" for="form_control_1">Select Program</label>
+										<div class="col-md-10">
+											<select class="form-control input-xlarge select2me" data-placeholder="Select..." name="program">
+											<?php										 include('../includes/dbcon.php');
+												$query2=mysqli_query($con,"select * from program order by program_date desc")or die(mysqli_error($con));
+												    while($row=mysqli_fetch_array($query2)){
+											?>
+												<option value="<?php echo $row['program_id'];?>"><?php echo $row['program']." ".$row['program_address'];?></option>
+												<?php }?>
+											</select>
+										</div>
+									</div>
+								</div>
 								<table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
 								<tbody>
 <?php
