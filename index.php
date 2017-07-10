@@ -1,16 +1,11 @@
 <?php include 'header.php';?>
 <!--DOC: menu-always-on-top class to the body element to set menu on top -->
 <body class = "menu-always-on-top">
-  <!-- BEGIN STYLE CUSTOMIZER -->
-	
-  <!-- END BEGIN STYLE CUSTOMIZER -->
-  <!-- Header BEGIN -->
+ 
 	<?php include 'mobile_nav.php';?>
-  <!-- Header END -->
-  <!-- Promo block BEGIN -->
+ 
 	<?php include 'slider.php';?>
-  <!-- Promo block END -->
-  <!-- About block BEGIN -->
+ 
   <div class="about-block content content-center" id="about">
     <div class="container">
 		
@@ -20,11 +15,9 @@
      <p>The Negros First Provincial Blood Bank Center in Barangay 39 includes an ₱18.9-million structure, a ₱4.2-million fire protection system, and a ₱1-million pathological vault. Negros Occidental was a recipient of the 2012 National Sandugo Award for its outstanding performance in bloodletting activities. DoH records show that it is one of only three provinces that has blood donations from more than 1% of its population.</p>
     </div>
   </div>
-  <!-- About block END -->
-  <!-- Services block BEGIN -->
+  
 	<?php include 'panel_menu.php';?>
-  <!-- Services block END -->
-  <!-- Message block BEGIN -->
+ 
   <?php include 'steps.php';?>
   <div class="message-block content content-center valign-center" id="message-block">
     <div class="valign-center-elem">
@@ -32,8 +25,7 @@
       <em><a href = "login.html" class = "btn btn-success">Log in</a> <a href = "signup.php" class = "btn btn-primary">Sign up</a></em>
     </div>
   </div>
-  <!-- Message block END -->
-  <!-- Team block BEGIN -->
+ 
 	<?php include 'team_block.php';?>
   <!-- Team block END -->
   <!-- Portfolio block BEGIN -->
